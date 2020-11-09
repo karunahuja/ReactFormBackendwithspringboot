@@ -40,12 +40,7 @@ steps{
 
 }}
 	
-	post{
-		always{
-		}
-		failue{
-		}
-	}
 
 
+}
 }

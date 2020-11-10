@@ -1,12 +1,24 @@
 pipeline{
     
     agent any
+    environment{
+        
+        PATH="C:/apache-maven-3.6.3/bin:$PATH"
+
+    }
     stages{
         stage("Git Checkout"){
             steps{
                git credentialsId: 'server-credentials', url: 'https://github.com/karunahuja/ReactFormBackendwithspringboot'
             }
         }
+        
+        stage("Maven Build"){
+            steps{
+                sh "mvn clean package"
+                }
+        }
+        
     }
     
 }
